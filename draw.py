@@ -223,6 +223,8 @@ def generate_ppm_file(num_img,compteur_pi):
     for x,y,couleur in points_temp:
         matrice_image[y][x]=couleur
 
+    return compteur_pi
+
 
 def genere_gif(images,fichier_gif):
     """Crée un fichier gif qui tourne en boucle avec une pause de 100 ms.
@@ -259,7 +261,7 @@ if __name__ == "__main__":
 
     #Création des 10 images
     for num_image in range(10):
-        generate_ppm_file(num_image,COMPTEUR_PI)
+        COMPTEUR_PI = generate_ppm_file(num_image,COMPTEUR_PI)
 
     #Création du gif
     genere_gif("*.ppm","pi.gif")
