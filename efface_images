@@ -1,0 +1,9 @@
+#! /bin/sh
+
+for element in img* pi.gif; do
+    if test -e "$element"; then
+        rm "$element"
+    fi
+done
+
+./draw.py "$1" "$2" "$3"
